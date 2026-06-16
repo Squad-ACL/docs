@@ -29,8 +29,8 @@
       "anchors": [
         {
           "anchor": "Home",
-          "icon": "house",
-          "href": "/"
+          "icon": "home",
+          "href": "https://docs.squadacl.com"
         }
       ]
     },
