@@ -38,25 +38,19 @@
     "groups": [
       {
         "group": "Platform",
-        "icon": "layers",
+        "icon": "stack-2",
         "expanded": true,
         "pages": [
           "platform/quickstart",
           "platform/key-concepts",
-          "platform/configuration/settings",
-          "platform/configuration/user-management",
-          "platform/administration/roles-permissions"
+          "platform/customization"
         ]
       },
       {
-        "group": "Analytics",
-        "icon": "chart-bar",
-        "expanded": true,
+        "group": "Modules",
         "pages": [
-          "analytics/quickstart",
-          "analytics/connect-data",
-          "analytics/dashboards/create-dashboard",
-          "analytics/reports/scheduled-reports"
+          "modules/seeding",
+          "modules/permission-groups"
         ]
       },
       {
@@ -65,9 +59,8 @@
         "expanded": true,
         "pages": [
           "integrations/quickstart",
-          "integrations/authentication",
-          "integrations/connectors/crm",
-          "integrations/webhooks/configure"
+          "integrations/discord",
+          "integrations/websockets"
         ]
       }
     ]

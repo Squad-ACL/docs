@@ -1,0 +1,73 @@
+---
+title: "Seeding"
+icon: "seedling"
+---
+
+<Badge color="red" stroke icon="plug-connected">Web Sockets Required</Badge>
+
+Track your community members' seeding time using the Squad ACL seeding module. This is highly configurable and allows for fixed reward resets and decaying seed rewards.
+
+### Requirements
+
+- A server with an active Web Socket connection.
+- Discord bot linked to your organization.
+
+<Steps>
+  <Step title="Configure your seed rewards">
+    To get started with the Seed Rewards module you must configure the modules settings. To do so, navigate to **Settings → Seeding** and configure the settings as needed.
+  </Step>
+  <Step title="Verify your settings are working">
+    Join your Squad server when it is within your seeding requirements and make sure you are getting rewards! You can see your reward progress on the **Whitelist** page or by using the _Seed Rewards_ button on the Discord seeding embed.
+  </Step>
+</Steps>
+
+### Base Settings
+
+| Attribute | Default | Options | Description |
+| --- | --- | --- | --- |
+| enabled | false | true / false | Should your servers track seeding rewards. |
+| interval | 60 | 0 → 60 | Interval (in minutes) in which it takes to earn a single seeding point. |
+| mode | fixed | fixed / decay | Should the rewards be reset on a fixed basis, or decay. |
+| playerCountThreshold | 50 | 0 → 100 | Maximum number of players for seeding. |
+| requiredPlayers | 2 | 0 → 100 | Minimum number of players for seeding. |
+| requiredPoints | 10 | N/A | Number of required points to get whitelisted |
+| startAt | null | N/A | The time (UTC) to start seed rewards |
+| endAt | null | N/A | The time (UTC) to end seed rewards |
+
+### Fixed Reset Settings
+
+| Attribute | Default | Options | Description |
+| --- | --- | --- | --- |
+| resetAll | false | true / false | Should all players be reset or just the awarded players. |
+| reset | monthly | monthly / intervalled | Should rewards reset monthly or every n days. |
+| resetOn | 1 | 0 → 31 | Day of the month to reset, or number of days between resets |
+
+### Decay Settings
+
+| Attribute | Default | Options | Description |
+| --- | --- | --- | --- |
+| decayAll | false | true / false | Should all players decay, or only awarded players |
+| points | 10 | N/A | Number of points to decay. |
+| rate | 3 | 1 → 31 | Number of days in which decay should happen. |
+
+### Troubleshooting
+
+If you are having issues with your seed rewards not working, try one of these things.
+
+<AccordionGroup>
+  <Accordion title="Seed Rewards are not working">
+    Make sure your rewards are enabled. If they are, disable and then re-enable them. You will have to save your settings each time. This will force the web socket service to re-establish its connection with your Squad server.
+  </Accordion>
+
+  <Accordion title="Seed Leaderboard is erroring out">
+    Make sure that your required points are set at a value greater than 0. There can be some issues related to calculating percent's when this number is 0.
+  </Accordion>
+
+  <Accordion title="Players cannot link their Discord">
+    If they are not getting an "invalid command" admin warn from Squad ACL, then proceed with the `Seed Rewards are not working` issue. If they are getting a response, make sure the command is typed in correctly `!seed ABCDE` where ABCDE is their code.
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  The seeding rewards module is under heavy development. We are always adding new things. If a feature release breaks something, we will notify you of those changes before the release goes out.
+</Note>

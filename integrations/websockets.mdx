@@ -1,0 +1,50 @@
+---
+title: "Websockets"
+icon: "link"
+---
+
+This guide will help you connect your game server to Squad ACL through Web Sockets.
+
+### Requirements
+
+- Must have a Squad server.
+- Must have the IP Address, Game Port, Query Port, and optionally the WS Port and Password.
+- Squad.JS or other Web Socket connector that exposes RCON events. See the required RCON events below.
+
+<Steps>
+  <Step title="Create a server">
+    To connect your Squad server to Squad ACL, you need to go to **Servers → Add Server** and enter in your server information.
+  </Step>
+  <Step title="Verify the Connection">
+    To verify the connection, Squad ACL shows three different connection states. 'Connecting', 'Offline', and 'Online'. These are all representative of the WS connection state, not the actual server state. Your server card will show the connection indicator.
+  </Step>
+  <Step title="Join your Server">
+    You can also check that Squad ACL is connected and listening for server commands by joining and using the !squadacl command in your chat. It should respond that it is connected. If it does not respond, check your connection information, or contact support.
+  </Step>
+</Steps>
+
+<Card title="Web Sockets" type="info">
+  We do not require that you use our Web Socket connections. However you will not be able to use any of the Web Socket dependent modules.
+</Card>
+
+### RCON Events
+
+We care about your server security and we only use specific RCON events and blacklist the events that we do not use. We maintain this posture so you know exactly what we are doing under the hood with your servers.
+
+#### **_Events we listen to:_**
+
+- `PLAYER_CONNECTED` We use this information for logging player information, as well to reward seeding efforts on your servers. Please see our security modules for more information on how this information is used.
+- `PLAYER_DISCONNECTED` This is solely used to stop rewarding seed efforts for that user.
+
+#### **_Commands we send:_**
+
+- `WARN` We utilize the warn command to notify a specific user of their seed progress when they join the server. We also use this to welcome them to your server upon connection!
+- `LIST_PLAYERS` We utilize this to grab your servers current player list each time seed rewards are calculated. Once your seeding threshold has surpassed, this is no longer used.
+
+<Note>
+  All of the other Admin RCON commands are blacklisted so they cannot be injected in any way.
+</Note>
+
+### Using a custom Web Socket service
+
+Squad ACL was built with Squad.JS in mind. This does not mean that you have to use Squad.JS. You can use whatever Web Socket connection you would like as long as the data sent to Squad ACL matches the structure of Squad.JS. 

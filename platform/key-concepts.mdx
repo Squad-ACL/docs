@@ -1,38 +1,47 @@
 ---
-title: Key concepts
-description: The building blocks of the platform—workspaces, projects, roles, and API access.
+title: "Key concepts"
+description: "How Squad ACL works and interfaces with your community and servers."
+icon: "key"
 ---
 
-Understanding the core model makes every other guide easier to follow. This page explains the four foundational concepts you'll encounter throughout the platform.
+Understanding how Squad ACL works is crucial to being able to debug issues with your configuration, as well as understand what is in your control and what isn't!
 
-## Workspaces
+## Organizations
 
-A workspace is the top-level container for your organization. It holds all projects, members, settings, and billing information. Every user belongs to at least one workspace, and each workspace operates independently with its own configuration and data.
+An organization is our term for your community. It is home to all of your ACL servers, settings, groups, and whitelist. Your organization is your ACL home. You can invite team members to your organization, or you can share various things about your organization with other organizations! This includes whitelist!
 
-Workspaces are identified by a unique slug used in URLs and API calls.
+## Servers
 
-## Projects
-
-Projects are the primary unit of work within a workspace. Each project has its own members, settings, and data. You can create as many projects as you need, and the same user can belong to multiple projects with different roles in each.
+Servers represent your in-game servers. Each one has the capability of connecting to a Squad server via Web Socket connections. Each server can have permission groups assigned to it, as well as record statistics that you can use to plan for the future, or even reward your players! See the [Web Socket integrations](/integrations/websockets) page for more information.
 
 <Info>
-  Project-level role overrides take precedence over workspace-level roles. A user who is a Viewer at the workspace level can be granted Admin access on a specific project.
+  Servers are limited at 2 per organization during the testing phase and more can be purchased by upgrading to the pro plan!
 </Info>
 
-## Members and roles
+## Team members and roles
 
-Every workspace member is assigned a role that controls what they can see and do:
+Each team member can be assigned a role within your organization:
 
 | Role | Description |
-|------|-------------|
-| **Admin** | Full access to workspace settings, billing, and all projects. Can invite and remove members. |
-| **Member** | Can create and manage projects they belong to. Cannot access billing or workspace-level settings. |
-| **Viewer** | Read-only access to projects they are added to. Cannot create or modify content. |
+| --- | --- |
+| **Owner** | Full access to your ACL organization. They can create, update, and delete all resources as well as view billing information. |
+| **Manager** | Can create and update permission groups. They are unable to permanently delete any resource. |
+| **User** | Read-Only access to all base organization information. They cannot modify anything. |
 
-Custom roles with granular permissions are available on higher-tier plans. See [roles and permissions](/platform/administration/roles-permissions) for details.
+These are the base permission groups that we currently offer. Custom roles and granular permissions will be available soon.
 
-## API credentials
+## Permission Groups
 
-API keys allow external tools and services to interact with your workspace programmatically. Each key is scoped to a specific workspace and can be restricted to read-only or read-write access.
+[Permission groups](/modules/permission-groups) allow you to control in-game permissions for your players. You can create groups and assign them to servers, export them organization wide, or just individually. All permission groups run on remote-admin lists that you just copy and paste into your Squad servers configuration.
 
-Treat API keys as secrets—rotate them immediately if they are exposed. See the API reference for authentication details and endpoint documentation.
+Permission groups can require approval by organization owners before giving that permission to the player. This way you can control who has access to what and when.
+
+## Whitelisting
+
+Squad ACL ships with native whitelist support. Our early access whitelist integration only ships with role-based whitelist. This works by monitoring your Discord for role updates and assigns a pre-configured number of slots to that person. We plan to offer PayPal, Patreon, and Discord support.
+
+We also offer clan based whitelisting. You can either share whitelist with another ACL organization and they can edit their own slots, or you can send a temporary URL to a non-ACL organization where they can edit their own.
+
+## Architecture
+
+Squad ACL runs as a Microservice Distributed System. This allows us to update various parts of the application with no downtime on the rest of the system. _This is all we will get into here, if you are curious on how all of our micro-services communicate, feel free to ask in the Discord!_

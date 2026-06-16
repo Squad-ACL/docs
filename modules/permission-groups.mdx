@@ -1,0 +1,73 @@
+---
+title: "Permission Groups"
+icon: "users-group"
+---
+
+Permission groups are the bread and butter of Squad ACL. We focus on making permission groups as simple as possible for server owners so they do not have to spend hours sifting through server files to find that misspelled group name.
+
+## Getting Started
+
+Here we will walk you through creating your first permission group and adding it to your Squad servers `remote-admin-list.cfg` file.
+
+<Steps>
+  <Step title="Create a Group">
+    Navigate over to **Groups → Create Group** to create your first group. Here you will be able to enter a group name _(Group names cannot contain spaces)_, as well as your groups permissions, and other various settings. We will cover those in-detail below.
+
+    <Info>
+      You can also import a group from your existing `Admin.cfg` file by copy and pasting the group line into the field.
+    </Info>
+  </Step>
+  <Step title="Assign Players to the Group">
+    After your group has been created, you can start adding players to it. This will automatically give whatever player is attached to that group, those permissions once the group is entered into the remote-admin list. To attach a player, on the `Players` tab, hit _Attach Player_ and a modal will pop-up where you can then select the players you want to attach. Once they are selected, you can hit attach and they will be added.
+
+    <Tip>
+      If you cannot find a player, owners can manually enter in their information. All we ask is that all information that is entered is correct.
+    </Tip>
+  </Step>
+  <Step title="Copy the Remote Admin">
+    Once you have assigned your first players (or not) you can click the green copy icon in the top right of the group card to copy your remote-admin list for that group. This is then placed into your `RemoteAdminListHosts.cfg` file within your server configs. You can even paste this into a URL to make sure that everything looks good!
+
+    <Tip>
+      Permission Groups can also be attached to servers or organizationally exported!
+    </Tip>
+  </Step>
+  <Step title="Verify it works">
+    To verify that the remote-admin list is working properly, just join your Squad server and make sure that you have the desired permissions.
+  </Step>
+</Steps>
+
+## Additional Features
+
+<Card title="Attach to Servers" icon="server">
+  All of our permission groups can be attached to servers! Simply navigate to the **Servers** tab on the Group Card and click _Attach Server_. Once attached, you can then navigate to the **Servers** page and copy the respective servers remote-admin list!
+</Card>
+
+<Card title="Approvals" icon="sparkles">
+  Permission groups can require approvals before a player is granted those permissions. If a group has approvals enabled, an owner _must_ approve of the changes before a player is attached.
+</Card>
+
+<Card title="Player Limit" icon="chart-bar-off">
+  Each group can have a player limit assigned to it. We require that all groups have at least a 9999 player limit on it, but we highly recommend placing a lower limit on the groups to prevent people from abusing them.
+</Card>
+
+<Card title="Organization Wide Exporting" icon="sparkles">
+  All permission groups can be exported organization-wide. Each organization has a dedicated remote-admin list where their whitelisted players (seed rewards) are exported. You can also export your groups to this list if you desire. 
+
+  <Tip>
+    While this sounds appealing, we suggest that you continue to use server based exporting to keep things organized.
+  </Tip>
+</Card>
+
+## Troubleshooting
+
+If you are having issues getting your remote-admin list to apply, try these things:
+
+<AccordionGroup>
+  <Accordion title="Permissions are not being applied">
+    Verify that your group name has no spaces and that the export remote-admin list is showing the right information. If all of this is correct, you may need to roll the layer or use the `AdminReloadServerConfig` RCON command for the group to apply.
+  </Accordion>
+
+  <Accordion title="My group is failing to create">
+    Make sure that you are not at the group limit that your tier has! Otherwise, make sure that all required information is entered and is correct. If it is still failing, just reach out to our support team and we will be able to assist you in troubleshooting the issues.
+  </Accordion>
+</AccordionGroup>
