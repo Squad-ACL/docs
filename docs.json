@@ -51,7 +51,8 @@
         "pages": [
           "modules/seeding",
           "modules/permission-groups"
-        ]
+        ],
+        "icon": "folder-star"
       },
       {
         "group": "Integrations",
