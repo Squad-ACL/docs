@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "aspen",
-  "name": "Product Guide",
-  "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
+  "name": "Squad ACL",
+  "description": "Set-up Squad ACL within your gaming community to make use of our industry leading security modules.",
   "colors": {
     "primary": "#f2cc0d",
     "light": "#f2cc0d",
@@ -84,5 +84,11 @@
   },
   "fonts": {
     "family": "Inter"
+  },
+  "thumbnails": {
+    "background": "/images/squad_acl_banner.png",
+    "fonts": {
+      "family": "Inter"
+    }
   }
 }
