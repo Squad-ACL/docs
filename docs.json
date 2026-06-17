@@ -67,8 +67,8 @@
     ]
   },
   "logo": {
-    "light": "/images/acl.png",
-    "dark": "/images/acl.png",
+    "light": "/images/acl_titlebar.png",
+    "dark": "/images/acl_titlebar.png",
     "href": "https://docs.squadacl.com"
   },
   "navbar": {
