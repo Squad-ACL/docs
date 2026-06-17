@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 180" aria-labelledby="title desc">
+  <title>SquadACL titlebar logo</title>
+  <desc id="desc">Horizontal SquadACL logo with shield lock icon on the left and SQUADACL wordmark on the right. Transparent background.</desc>
+  <defs>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.45" stop-color="#d9d9d9"/>
+      <stop offset="1" stop-color="#8f8f8f"/>
+    </linearGradient>
+    <linearGradient id="yellow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe45c"/>
+      <stop offset="1" stop-color="#f2cc0d"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <fedropshadow dx="0" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(36 20)" filter="url(#softShadow)">
+    
+    <path d="M70 2 C100 24 132 34 168 38 C170 93 148 123 70 150 C-8 123 -30 93 -28 38 C8 34 40 24 70 2 Z" fill="none" stroke="#050505" stroke-width="15" stroke-linejoin="round"/>
+    <path d="M70 2 C100 24 132 34 168 38 C170 93 148 123 70 150 C-8 123 -30 93 -28 38 C8 34 40 24 70 2 Z" fill="none" stroke="url(#silver)" stroke-width="10" stroke-linejoin="round"/>
+
+    
+    <path d="M37 70 V53 C37 34 51 20 70 20 C89 20 103 34 103 53 V70" fill="none" stroke="#050505" stroke-width="26" stroke-linecap="round"/>
+    <path d="M37 70 V53 C37 34 51 20 70 20 C89 20 103 34 103 53 V70" fill="none" stroke="url(#silver)" stroke-width="18" stroke-linecap="round"/>
+
+    
+    <path d="M25 68 H115 C124 68 130 75 130 84 V109 C130 116 126 122 120 126 L70 148 L20 126 C14 122 10 116 10 109 V84 C10 75 16 68 25 68 Z" fill="#050505"/>
+    <path d="M25 68 H115 C124 68 130 75 130 84 V109 C130 116 126 122 120 126 L70 148 L20 126 C14 122 10 116 10 109 V84 C10 75 16 68 25 68 Z" fill="url(#silver)"/>
+    
+    <path d="M70 87 m-14 0 a14 14 0 1 0 28 0 a14 14 0 1 0 -28 0 M63 99 L77 99 L83 130 H57 Z" fill="#050505"/>
+  </g>
+
+  
+  <g transform="translate(230 40)" filter="url(#softShadow)" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="96" font-weight="900" letter-spacing="2">
+    <text x="0" y="95" fill="#050505" stroke="#050505" stroke-width="8" paint-order="stroke fill">SQUAD</text>
+    <text x="0" y="95" fill="url(#silver)">SQUAD</text>
+    <text x="385" y="95" fill="#050505" stroke="#050505" stroke-width="8" paint-order="stroke fill">ACL</text>
+    <text x="385" y="95" fill="url(#yellow)">ACL</text>
+  </g>
+</svg>
